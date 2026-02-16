@@ -1,0 +1,13 @@
+{
+  "name": "Auto Push to GitHub",
+  "version": "1.0.0",
+  "description": "Automatically commit and push changes to GitHub repository when files are edited",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*", "*.json", "*.md", "*.js", "*.ts", "*.tsx"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "git add . && git commit -m 'Auto update: $(date)' && git push origin main"
+  }
+}
